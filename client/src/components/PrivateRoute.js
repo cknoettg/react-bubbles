@@ -7,9 +7,9 @@ const PrivateRoute = ({ components: Component, ...rest}) => {
         {...rest}
         render={props => {
             if (localStorage.getItem('token')){
-                return <Component {...props}/>; //BubblesPage?
+                return <Component {...props}/>;
             } else{
-                return <Redirect to="api/login"/>
+                return <Redirect to="/login"/>
                 }
              }
          }

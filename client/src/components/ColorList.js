@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const initialColor = {
@@ -10,6 +11,8 @@ const ColorList = ({ colors, updateColors }) => {
   console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
+
+  const history = useHistory();
 
   const editColor = color => {
     setEditing(true);
@@ -24,10 +27,9 @@ const ColorList = ({ colors, updateColors }) => {
     AxiosWithAuth()
     .put(`/colors/${colorToEdit.id}`, colorToEdit) //.put(`http://localhost:5000/api/colors/${colorToEdit.id}`)
     .then(res =>{
-      //console.log(res.data);
       setColorToEdit(res.data)
       setEditing(false);
-      // props.history.push(`/protected`) - delete this out
+      history.push(`/protected`);
     })
     .catch(err => console.log(err))
   };
