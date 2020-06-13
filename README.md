@@ -27,9 +27,26 @@ In this project you will create a login page and request a token from the server
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain what a token is used for.
+
+A token is used to verify your identity to an API or other computing resource, so you can access it. With your token verified, you may be able to enjoy benefits such as higher API call limits. Some API's require a token just to be able to access the API.
+
 - [ ] What steps can you take in your web apps to keep your data secure?
+
+Input validation - make sure that the input you received from the user is valid input, and that the input will not cause unauthorized data to be retrieved or cause the web app to crash.
+Make sure the token and other credentials are not listed in plaintext for others to steal.
+Web application firewalls (WAF's) can also help to make sure people only access the parts of the application that they should access.
+Make sure that functions can only be called/modified within a narrow scope, and make sure your data is not
+modified in unsafe ways by making unmalleable elements malleable (ex.: use const instead of var).
+
 - [ ] Describe how web servers work.
+
+Web servers store the data that you want the world to be able to reach. The web server also contains all the files that are needed for the web application to run, so you want to secure files that should not be accessed from the outside world, while still allowing your webpage or web app to use those resources. Web servers can be a local machine that hosts the website, but this is less common and time-consuming. Web servers can be rented from hosting companies. Or, your web server can be created using cloud services, like Azure or AWS. So far, we have talked about the physical or virtual web server machine. But the web server can also refer to the underlying service that allows the web page or app to operate, such as Apache, Nginx or IIS.
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+C - POST
+R - GET
+U - PUT
+D - DELETE
 
 
 ## Project Set Up
