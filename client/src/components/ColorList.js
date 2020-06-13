@@ -25,7 +25,7 @@ const ColorList = ({ colors, updateColors }) => {
     // think about where will you get the id from...
     // where is is saved right now?
     AxiosWithAuth()
-    .put(`/colors/${colorToEdit.id}`, colorToEdit) //.put(`http://localhost:5000/api/colors/${colorToEdit.id}`)
+    .put(`/colors/${colorToEdit.id}`, colorToEdit)
     .then(res =>{
       setColorToEdit(res.data)
       setEditing(false);
@@ -37,10 +37,10 @@ const ColorList = ({ colors, updateColors }) => {
   const deleteColor = color => {
     // make a delete request to delete this color
     AxiosWithAuth()
-    .delete(`/colors/${color.id}`) //.delete(`http://localhost:5000/api/colors/${color.id}`)
+    .delete(`/colors/${color.id}`)
     .then(res => {
-      setColorToEdit(res.data)
-      //props.history.push(`/protected`); - delete this out
+      setColorToEdit(res.data);
+      history.push(`/protected`);
     })
     .catch(err=> console.log(err))
   };
