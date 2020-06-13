@@ -10,10 +10,17 @@ body,
   padding: 0;
 }
 
+h1 {
+  text-align: center;
+  height: 50px;
+  margin: 0 auto;
+}
+
 .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
+  flex-direction: column;
 
   svg {
     height: 100%;
@@ -61,9 +68,11 @@ body,
 }
 
 form {
+  margin: 0 auto;
   margin-top: 60px;
   display: flex;
   flex-direction: column;
+  width: 50%;
 
   legend {
     padding-left: 40px;
@@ -74,12 +83,19 @@ form {
   }
 
   label {
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     padding: 4px 36px 4px 40px;
   }
 
   input {
+    margin: 0 auto;
+    width: 100px;
+  }
+
+  button {
+    margin: 0 auto;
     width: 100px;
   }
 }

@@ -9,3 +9,5 @@ export const AxiosWithAuth = () =>{
         }
     });
 };
+
+export default AxiosWithAuth;

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import "../styles.scss";
 
 const Login = () => {
   //state
   const [credentials, setCredentials] = useState({ username: '', password: '' });
+  const history = useHistory();
 
   //change handler
   const handleChange = e => {
@@ -17,11 +20,11 @@ const Login = () => {
   // when you have handled the token, navigate to the BubblePage route
   const logins = e => {
     e.preventDefault();
-    AxiosWithAuth
+    AxiosWithAuth()
       .post(`http://localhost:5000/api/login`, credentials) ///api/login
       .then(res => {
         localStorage.setItem('token', res.data.payload);
-        history.push('/protected'); // /BubblePage?
+        history.push('/protected');
       })
       .catch(err => console.log(err));
     setCredentials({ username: '', password: '' });
